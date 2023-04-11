@@ -1,0 +1,117 @@
+* {
+    margin: padding;
+}
+
+.light-theme {
+    --bg-color: white;
+    --font-color: black;
+    --border-color: black;
+}
+
+.dark-theme {
+    --bg-color: black;
+    --font-color: white;
+    --border-color: white;
+
+}
+
+.wrapper {
+    height: 100vw;
+    height: 92vh;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.row {
+    width: 100vw;
+    height: fit-content;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transfer-icon {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    color: var(--border-color);
+}
+
+
+.form-floating {
+    margin: 0.5rem;
+}
+
+.input-text {
+    resize: none;
+    width: 100%;
+    height: 25vh;
+    color: var(--font-color);
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    background-color: var(--bg-color);
+    -webkit-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+}
+
+.output {
+    width: 15vw;
+    height: 25vh;
+    margin: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    -webkit-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+}
+
+.lang {
+    width: 15vw;
+    padding: 0.8rem;
+    font-family: monospace;
+    font-size: large;
+    margin: 0.5rem;
+    appearance: none;
+    /* border: none; */
+    border-radius: 5px;
+}
+
+/* 
+.contents{
+    width: 100%;
+    height: 85vh;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+} */
+
+/* .footer{
+    width:100vw;
+    height: 7vh;
+    background-color: yellowgreen;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: absolute;
+    bottom: 0;
+    background-color: #212529;
+    color: white;
+} */
+
+
+/* .input-text{
+    outline: none;
+    border: 1px solid var(--border-color);
+    resize: none;
+    width: 100%;
+    height: 25vh;
+    color: var(--font-color);
+}
+
+.card{
+    min-height: 25vh;
+} */
