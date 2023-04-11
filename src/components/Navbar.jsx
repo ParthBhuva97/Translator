@@ -20,6 +20,7 @@ function Navbar() {
             <input type="checkbox" onChange={(e)=>{handleThemeSwitch(e);}}/>
             <span class="slider round"></span>
           </label>
+          <span className="theme-text">Toggle Dark Mode</span>
         </div>
       </nav>
     </div>
