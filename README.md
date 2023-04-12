@@ -10,4 +10,4 @@ Endpoint : /translate
 
 # Deployment Link
 
-https://warm-moonbeam-1109a1.netlify.app/
+https://relaxed-tartufo-221fc6.netlify.app/
