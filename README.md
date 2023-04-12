@@ -4,12 +4,12 @@ A Clone of Google Translate that auto-detects input language and translates give
 
 # Deployment Link
 
-https://relaxed-tartufo-221fc6.netlify.app/
+https://imaginative-syrniki-b095a7.netlify.app/
 
 ## Tech Stack
 
 **Client:** ReactJS \
-**API:** Text Translation API
+**API:** Text Translation API & Text to Speech API
 
 
 
