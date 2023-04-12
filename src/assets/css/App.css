@@ -82,6 +82,12 @@
 .input-text::placeholder {
   color: var(--font-color);
 }
+
+.speaker{
+  color: var(--icon-color);
+  font-size: larger;
+  cursor: pointer;
+}
 /* 
 .output {
   height: 25vh;

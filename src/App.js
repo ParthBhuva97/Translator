@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import "./assets/css/App.css";
 import Navbar from "./components/Navbar";
-import { BiTransferAlt } from "react-icons/bi";
+import { BiTransferAlt, BiMicrophone } from "react-icons/bi";
+import { RxSpeakerLoud, RxSpeakerModerate } from "react-icons/rx";
 
 function App() {
   const [text, setText] = useState("");
   const [lang, setLanguage] = useState("");
   const [output, setOutput] = useState({});
+  const [clicked, setClicked] = useState(false);
+  const [url,setUrl] = useState("");
 
   async function handleLanguageSelection(event) {
     setLanguage(event.target.value);
@@ -26,6 +29,22 @@ function App() {
     const data = await response.json();
     console.log(data);
     setOutput(data);
+  }
+
+  async function handleTextToSpeech(in_text,in_lang) {
+    const response = await fetch("https://translator-server-two.vercel.app/tts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    responseType: 'blob',
+    body: JSON.stringify({ text: in_text, language: in_lang }),
+    });
+    const data = await response.blob();
+    console.log(data);
+    const url = URL.createObjectURL(data);
+    console.log(url);
+    setUrl(url);
   }
 
   function handleInputTextChange(event) {
@@ -54,6 +73,20 @@ function App() {
                   handleInputTextChange(e);
                 }}
               ></textarea>
+              <div
+                className="speaker"
+                style={
+                  JSON.stringify(output) === "{}"
+                    ? { display: "none" }
+                    : { display: "block" }
+                }
+                onClick={() => {
+                  setClicked(!clicked);
+                  handleTextToSpeech(text,output.source_lang);
+                }}
+              >
+                {clicked ? <RxSpeakerLoud /> : <RxSpeakerModerate />}
+              </div>
             </div>
           </div>
           <div className="col transfer-icon">
@@ -77,8 +110,25 @@ function App() {
                 value={output.translated_text}
                 class="input-text"
               ></textarea>
+              <div
+                className="speaker"
+                style={
+                  JSON.stringify(output) === "{}"
+                    ? { display: "none" }
+                    : { display: "block" }
+                }
+                onClick={() => {
+                  setClicked(!clicked);
+                  handleTextToSpeech(output.translated_text,output.target_lang);
+                }}
+              >
+                {clicked ? <RxSpeakerLoud /> : <RxSpeakerModerate />}
+              </div>
             </div>
           </div>
+        </div>
+        <div className="row">
+        <audio controls src={url} autoplay="true"/>
         </div>
       </div>
     </>
