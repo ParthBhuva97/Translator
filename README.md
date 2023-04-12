@@ -23,6 +23,11 @@ https://relaxed-tartufo-221fc6.netlify.app/
   POST /translate
 ``
 
+#### Text To Speech Endpoint
+
+``
+  POST /tts
+``
 
 
 ## Authors
