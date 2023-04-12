@@ -23,6 +23,9 @@ https://imaginative-syrniki-b095a7.netlify.app/
   POST /translate
 ``
 
+#### Base Url : https://rapidapi.com/parthbhuva97/api/text-to-speech67
+
+
 #### Text To Speech Endpoint
 
 ``
