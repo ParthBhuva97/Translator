@@ -4,18 +4,19 @@
 }
 
 .light-theme {
-  --nav-color: #EEEEFF;
-  --bg-color: #F8F8FF;
+  --nav-color: #eeeeff;
+  --bg-color: #f8f8ff;
   --font-color: black;
   --border-color: black;
+  --switch-color: #242124;
 }
 
 .dark-theme {
-  --nav-color: #1B1B1B;
+  --nav-color: #1b1b1b;
   --bg-color: #242124;
   --font-color: white;
   --border-color: yellow;
-
+  --switch-color: #bebdbe;
 }
 
 .navbar {
@@ -45,7 +46,6 @@
   align-items: center;
   justify-content: center;
   margin: 0 2rem 0 2rem;
-
 }
 
 .switch {
@@ -79,9 +79,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: var(--switch-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -92,19 +92,19 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-input:checked+.slider {
-  background-color: #2196F3;
+input:checked + .slider {
+  background-color: var(--switch-color);
 }
 
-input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--switch-color);
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);

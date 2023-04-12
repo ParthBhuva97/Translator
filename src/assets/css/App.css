@@ -1,85 +1,156 @@
 * {
-    margin: padding;
+  margin: padding;
 }
 
 .light-theme {
-    --bg-color: white;
-    --font-color: black;
-    --border-color: black;
+  --shadow-color: #cfcfcf;
+  --bg-color: white;
+  --font-color: black;
+  --border-color: black;
+  --icon-color: rgba(0, 0, 0, 0.6);
 }
 
 .dark-theme {
-    --bg-color: black;
-    --font-color: white;
-    --border-color: white;
-
+  --shadow-color: #3d3d3d;
+  --bg-color: black;
+  --font-color: white;
+  --border-color: white;
+  --icon-color: yellow;
 }
 
 .wrapper {
-    height: 100vw;
-    height: 92vh;
-    background-color: var(--bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  height: 100vw;
+  height: 92vh;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .row {
-    width: 100vw;
-    height: fit-content;
-    margin: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100vw;
+  height: fit-content;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .transfer-icon {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    color: var(--border-color);
+  font-size: 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  color: var(--icon-color);
 }
 
-
 .form-floating {
-    margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .input-text {
-    resize: none;
-    width: 100%;
-    height: 25vh;
-    color: var(--font-color);
-    border: none;
-    border-bottom: 2px solid var(--border-color);
-    background-color: var(--bg-color);
-    -webkit-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+  resize: none;
+  width: 18rem;
+  height: 25vh;
+  color: var(--font-color);
+  border: none;
+  font-size: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px var(--shadow-color),
+    -2px -2px 10px var(--shadow-color);
+  /* -webkit-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
-    box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.75); */
 }
 
+.input-text:focus-visible {
+  outline: none;
+}
+
+.input-text::placeholder {
+  color: var(--font-color);
+}
+/* 
 .output {
-    width: 15vw;
-    height: 25vh;
-    margin: 0.5rem;
-    color: var(--font-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    -webkit-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+  height: 25vh;
+  color: var(--font-color);
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+  padding: 0.5rem;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 10px 10px 24px #d1d1d1, -10px -10px 24px #ffffff;
+   -webkit-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
-    box-shadow: 13px 14px 26px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.75); 
+} */
+
+.input-lang {
+  width: 85%;
+  padding: 0.8rem;
+  font-family: monospace;
+  font-size: large;
+  margin: 0.5rem;
+  appearance: none;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border: 1px solid #767676;
 }
 
 .lang {
-    width: 15vw;
-    padding: 0.8rem;
-    font-family: monospace;
-    font-size: large;
-    margin: 0.5rem;
-    appearance: none;
-    /* border: none; */
-    border-radius: 5px;
+  width: 95%;
+  padding: 0.8rem;
+  font-family: monospace;
+  font-size: large;
+  margin: 0.5rem;
+  appearance: none;
+  border-radius: 5px;
+}
+
+@media (width<=425px) {
+  .row {
+    display: contents;
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  .transfer-icon {
+    transform: rotate(90deg);
+  }
+
+  .wrapper {
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+@media (width<=375px) {
+  .logo {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .switch-container {
+    padding: 0.5rem;
+  }
+
+  .navbar {
+    height: auto !important;
+    display: inline-block !important;
+  }
 }
 
 /* 
@@ -102,7 +173,6 @@
     background-color: #212529;
     color: white;
 } */
-
 
 /* .input-text{
     outline: none;
